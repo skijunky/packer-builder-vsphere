@@ -1,4 +1,5 @@
-"builders": [
+{
+  "builders": [
     {
       "type": "vsphere-iso",
   
@@ -34,10 +35,10 @@
       "convert_to_template": true,
 
       "iso_paths": ["{{user `iso_url`}}"],
-      "floppy_files": ["ks.cfg"],
+      "floppy_files": ["preseed.cfg"],
       "boot_command": [
         "<esc><wait>",
-        "linux ks=hd:fd0:/ks.cfg<enter>"
+        "linux ks=hd:fd0:/preseed.cfg<enter>"
       ]
     }
   ],
@@ -51,4 +52,3 @@
     }
   ]
 }
-© 2020 GitH
