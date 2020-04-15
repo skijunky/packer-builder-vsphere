@@ -8,7 +8,7 @@
       "password":            "VMware1!",
       "insecure_connection": "true",
 
-      "template": "centos7-cloudinit",
+      "template": "template-centos7-cloudinit",
       "vm_name":  "centos7-clone-{{timestamp}}",
       "host":     "esx-05a.corp.local",
 
