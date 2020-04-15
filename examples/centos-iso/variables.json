@@ -7,7 +7,7 @@
   "vsphere-network": "Virtual-Machines",
   "vsphere-datastore": "Region01a-COMP01-tmp",
   "vsphere-folder": "VRA-VMs",
-  "vm-name": "template-CentOS7iso",
+  "vm-name": "template-CentOS7iso-test",
   "vm-cpu-num": "1",
   "vm-mem-size": "1024",
   "vm-disk-size": "25600",
