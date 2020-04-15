@@ -5,6 +5,6 @@
     "host":"esx-05a.corp.local",
     "cluster": "RegionA01-COMP02",
     "network": "Virtual-Machines",
-    "ssh_username": "holuser",
+    "ssh_username": "root",
     "ssh_password": "VMware1!"
   }
