@@ -1,18 +1,54 @@
-{
-  "builders": [
+"builders": [
     {
-      "type": "vsphere-clone",
-
-      "vcenter_server":      "vcsa-01a.corp.local",
-      "username":            "administrator@corp.local",
-      "password":            "VMware1!",
+      "type": "vsphere-iso",
+  
+      "vcenter_server": "{{user `vsphere-server`}}",
+      "username": "{{user `vsphere-user`}}",
+      "password": "{{user `vsphere-password`}}",
       "insecure_connection": "true",
 
-      "template": "template-centos7-cloudinit",
-      "vm_name":  "centos7-clone-{{timestamp}}",
-      "host":     "esx-05a.corp.local",
+      "datacenter": "{{user `vsphere-datacenter`}}",
+      "cluster": "{{user `vsphere-cluster`}}",
+      "network": "{{user `vsphere-network`}}",
+      "datastore": "{{user `vsphere-datastore`}}",
 
-      "communicator": "none"
+      "vm_name": "{{user `vm-name`}}",
+      "notes": "Build via Packer",
+      
+      "boot_wait": "10s",
+      "boot_order": "disk,cdrom,floppy",
+
+      "guest_os_type": "centos7_64Guest",
+
+      "ssh_username": "root",
+      "ssh_password": "server",
+
+      "CPUs": "{{user `vm-cpu-num`}}",
+      "RAM": "{{user `vm-mem-size`}}",
+      "RAM_reserve_all": false,
+      "disk_controller_type": "pvscsi",
+      "disk_size": "{{user `vm-disk-size`}}",
+      "disk_thin_provisioned": true,
+      "network_card": "vmxnet3",
+
+      "convert_to_template": true,
+
+      "iso_paths": ["{{user `iso_url`}}"],
+      "floppy_files": ["ks.cfg"],
+      "boot_command": [
+        "<esc><wait>",
+        "linux ks=hd:fd0:/ks.cfg<enter>"
+      ]
+    }
+  ],
+  
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "sudo yum install -y cloud-init"
+      ]
     }
   ]
 }
+© 2020 GitH
