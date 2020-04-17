@@ -1,13 +1,13 @@
 {
     "vcenter_server":"vcsa-01a.corp.local",
-    "username":"administrator@vsphere.local",
+    "username":"administrator@corp.local",
     "password":"VMware1!",
-    "datastore":"Region01a-COMP01-temp",
+    "datastore":"Region01a-COMP01-tmp",
     "folder": "VRA-VMs",
     "host":"esx-05a.corp.local",
     "cluster": "RegionA01-COMP02",
     "network": "Virtual-Machines",
     "ssh_username": "vm preseed user",
     "ssh_password": "vm preseed password",
-    "iso_url": "[Region01a-COMP01-tmp]CentOS-7-x86_64-DVD-1908.iso"
+    "iso_url": "[Region01a-COMP01-tmp] /CentOS-7-x86_64-DVD-1908.iso"
 }
