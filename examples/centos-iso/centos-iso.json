@@ -35,7 +35,7 @@
         "iso_paths": ["{{user `iso_url`}}"],
 
         "floppy_files": [
-          "./preseed.cfg"
+          "~/preseed.cfg"
         ],
         "boot_command": [
           "<enter><wait><f6><wait><esc><wait>",
